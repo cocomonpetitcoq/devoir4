@@ -6,6 +6,7 @@ public class Employé {
 	private String nom;
 	private String prénom;
 	private double salaire;
+	private static int C;
 	private int id;
 	private String ville;
 	private boolean[]disponibilités;
@@ -17,11 +18,11 @@ public Employé() {
 		id=100000;
 		ville="montreal";
 	}
-	public Employé(String nom, String prénom, int id, String ville, boolean[] disponibilités,
+	public Employé(String nom, String prénom, String ville, boolean[] disponibilités,
 			Chalet[] chaletEntretenu) {
 		this.nom = nom;
 		this.prénom = prénom;
-		this.id = ++id;
+		this.id = ++C;
 		this.ville = ville;
 		this.disponibilités = new boolean[7];
 		this.chaletEntretenus = new Chalet[5];
