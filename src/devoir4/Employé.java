@@ -6,18 +6,12 @@ public class Employé {
 	private String nom;
 	private String prénom;
 	private double salaire;
-	private static int C;
+	private static int C=100000;
 	private int id;
 	private String ville;
 	private boolean[]disponibilités;
 	private Chalet [] chaletEntretenus;
-	
-public Employé() {
-		nom="arnold";
-		prénom="ulrich";
-		id=100000;
-		ville="montreal";
-	}
+
 	public Employé(String nom, String prénom, String ville, boolean[] disponibilités,
 			Chalet[] chaletEntretenu) {
 		this.nom = nom;
@@ -46,10 +40,6 @@ public Employé() {
 
 	public int getId() {
 		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public String getVille() {
