@@ -54,7 +54,7 @@ public class Chalet {
 		this.nbchambres = nbchambres;
 	}
 
-	public boolean isLoué() {
+	public boolean getLoué() {
 		return loué;
 	}
 
