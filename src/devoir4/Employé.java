@@ -11,11 +11,17 @@ public class Employé {
 	private boolean[]disponibilités;
 	private Chalet [] chaletEntretenus;
 	
+public Employé() {
+		nom="arnold";
+		prénom="ulrich";
+		id=100000;
+		ville="montreal";
+	}
 	public Employé(String nom, String prénom, int id, String ville, boolean[] disponibilités,
 			Chalet[] chaletEntretenu) {
 		this.nom = nom;
 		this.prénom = prénom;
-		this.id = id;
+		this.id = ++id;
 		this.ville = ville;
 		this.disponibilités = new boolean[7];
 		this.chaletEntretenus = new Chalet[5];
@@ -75,7 +81,6 @@ public class Employé {
 	public void setChaletEntretenu(Chalet[] chaletEntretenu) {
 		this.chaletEntretenus = chaletEntretenu;
 	}
-
 	public String toString() {
 		return "Employé ["+ id +"," + nom + "," + prénom + "son salaire=" + salaire+ ", ville:" + ville + ", les disponibilités sont :"
 				+ Arrays.toString(disponibilités) + ", chaletEntretenu=" + Arrays.toString(chaletEntretenus) + "]";
