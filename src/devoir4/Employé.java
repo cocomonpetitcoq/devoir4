@@ -3,37 +3,38 @@ package devoir4;
 import java.util.Arrays;
 
 public class Employé {
-	private String Nom;
-	private String Prenom;
+	private String nom;
+	private String prénom;
+	private double salaire;
 	private int id;
 	private String ville;
 	private boolean[]disponibilités;
-	private Chalet [] chaletEntretenu;
+	private Chalet [] chaletEntretenus;
 	
-	public Employé(String nom, String prenom, int id, String ville, boolean[] disponibilités,
+	public Employé(String nom, String prénom, int id, String ville, boolean[] disponibilités,
 			Chalet[] chaletEntretenu) {
-		Nom = nom;
-		Prenom = prenom;
+		this.nom = nom;
+		this.prénom = prénom;
 		this.id = id;
 		this.ville = ville;
 		this.disponibilités = new boolean[7];
-		this.chaletEntretenu = new Chalet[5];
+		this.chaletEntretenus = new Chalet[5];
 	}
 
 	public String getNom() {
-		return Nom;
+		return nom;
 	}
 
 	public void setNom(String nom) {
-		Nom = nom;
+		nom = nom;
 	}
 
 	public String getPrenom() {
-		return Prenom;
+		return prénom;
 	}
 
-	public void setPrenom(String prenom) {
-		Prenom = prenom;
+	public void setPrenom(String prénom) {
+		prénom = prénom;
 	}
 
 	public int getId() {
@@ -51,6 +52,13 @@ public class Employé {
 	public void setVille(String ville) {
 		this.ville = ville;
 	}
+	public double getSalaire() {
+		return salaire;
+	}
+	
+	public void setSalaire(double salaire) {
+		this.salaire=salaire;
+	}
 
 	public boolean[] getDisponibilités() {
 		return disponibilités;
@@ -61,16 +69,16 @@ public class Employé {
 	}
 
 	public Chalet[] getChaletEntretenu() {
-		return chaletEntretenu;
+		return chaletEntretenus;
 	}
 
 	public void setChaletEntretenu(Chalet[] chaletEntretenu) {
-		this.chaletEntretenu = chaletEntretenu;
+		this.chaletEntretenus = chaletEntretenu;
 	}
-	@Override
+
 	public String toString() {
-		return "Employé [Nom=" + Nom + ", Prenom=" + Prenom + ", id=" + id + ", ville=" + ville + ", disponibilités="
-				+ Arrays.toString(disponibilités) + ", chaletEntretenu=" + Arrays.toString(chaletEntretenu) + "]";
+		return "Employé ["+ id +"," + nom + "," + prénom + "son salaire=" + salaire+ ", ville:" + ville + ", les disponibilités sont :"
+				+ Arrays.toString(disponibilités) + ", chaletEntretenu=" + Arrays.toString(chaletEntretenus) + "]";
 	}
 
 }
