@@ -4,14 +4,11 @@ public class CentreDeLocation {
 	private Chalet[] chalets;
 	private Employé[] employés;
 	private String motDePasse;
-	private Employé employéconnectés;
-	
 
-	public CentreDeLocation(Chalet[] chalets, Employé[] employés, String motDePasse,Employé employéconnectés) {
+	public CentreDeLocation(Chalet[] chalets, Employé[] employés, String motDePasse) {
 		this.chalets = chalets;
 		this.employés = employés;
 		this.motDePasse = motDePasse;
-		this.employéconnectés=employéconnectés;
 	}
 
 	public Chalet[] getChalets() {
