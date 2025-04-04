@@ -7,6 +7,7 @@ public class Employé {
 	private String prénom;
 	private double salaire;
 	private static int C=100000;
+	private static int auto=100000;
 	private int id;
 	private String ville;
 	private boolean[]disponibilités;
@@ -17,6 +18,7 @@ public class Employé {
 		this.nom = nom;
 		this.prénom = prénom;
 		this.id = ++C;
+		this.id = ++auto;
 		this.ville = ville;
 		this.disponibilités = new boolean[7];
 		this.chaletEntretenus = new Chalet[5];
@@ -27,7 +29,7 @@ public class Employé {
 	}
 
 	public void setNom(String nom) {
-		nom = nom;
+		this.nom = nom;
 	}
 
 	public String getPrenom() {
@@ -35,7 +37,7 @@ public class Employé {
 	}
 
 	public void setPrenom(String prénom) {
-		prénom = prénom;
+		this.prénom = prénom;
 	}
 
 	public int getId() {
