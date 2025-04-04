@@ -4,6 +4,7 @@ public class CentreDeLocation {
 	private Chalet[] chalets;
 	private Employé[] employés;
 	private String motDePasse;
+	private static final String MDPPROPRIO="chaletsTR25";
 
 	public CentreDeLocation(Chalet[] chalets, Employé[] employés, String motDePasse) {
 		this.chalets = chalets;
