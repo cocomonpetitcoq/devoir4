@@ -5,11 +5,14 @@ public class CentreDeLocation {
 	private Employé[] employés;
 	private String motDePasse;
 	private static final String MDPPROPRIO="chaletsTR25";
+	private Employé employéconnectés;
+	
 
-	public CentreDeLocation(Chalet[] chalets, Employé[] employés, String motDePasse) {
+	public CentreDeLocation(Chalet[] chalets, Employé[] employés, String motDePasse,Employé employéconnectés) {
 		this.chalets = chalets;
 		this.employés = employés;
 		this.motDePasse = motDePasse;
+		this.employéconnectés=employéconnectés;
 	}
 
 	public Chalet[] getChalets() {
