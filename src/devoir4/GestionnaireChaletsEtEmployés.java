@@ -3,6 +3,7 @@ package devoir4;
 import java.util.Scanner;
 
 public class GestionnaireChaletsEtEmployés {
+	private static final String MDPPROPRIO="chaletsTR25";
 
 	public static void main(String[] args) {
 		CentreDeLocation entreprise = new CentreDeLocation(new Chalet[], new Employé[]);
