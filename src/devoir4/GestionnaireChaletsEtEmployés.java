@@ -94,6 +94,7 @@ public class GestionnaireChaletsEtEmployés {
 				break;
 			}
 			case 3: {
+				employéConnecté.afficherChaletsEntretenus();
 				break;
 			}
 			case 4: {
