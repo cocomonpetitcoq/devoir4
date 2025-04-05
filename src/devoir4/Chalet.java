@@ -17,10 +17,6 @@ public class Chalet {
 		this.employéEntretien = null;
 	}
 
-	public Chalet() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
 
 	public String getNom() {
 		return nom;
