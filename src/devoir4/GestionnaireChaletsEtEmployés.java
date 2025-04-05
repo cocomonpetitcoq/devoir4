@@ -6,9 +6,8 @@ public class GestionnaireChaletsEtEmployés {
 	private static final String MDPPROPRIO = "chaletsTR25";
 	private static int option;
 	private static Scanner scan = new Scanner(System.in);
-
 	public static void main(String[] args) {
-		CentreDeLocation entreprise = new CentreDeLocation(new Chalet[], new Employé[], MDPPROPRIO);
+		CentreDeLocation entreprise = new CentreDeLocation(new Chalet[10], new Employé[10], MDPPROPRIO);
 		boolean arrêtMenuPrincipal = false;
 
 		while (!arrêtMenuPrincipal) {
@@ -76,7 +75,7 @@ public class GestionnaireChaletsEtEmployés {
 	
 	private static void menuEmployé() {
 		boolean arrêtMenuEmployé = false;
-		Employé employéConnecté;
+		Employé employéConnecté=null;
 		
 		while (!arrêtMenuEmployé) {
 			afficherMenuEmployé();
@@ -88,6 +87,7 @@ public class GestionnaireChaletsEtEmployés {
 				break;
 			}
 			case 1: {
+				afficherDisponibilités(employéConnecté);
 				break;
 			}
 			case 2: {
@@ -164,6 +164,20 @@ public class GestionnaireChaletsEtEmployés {
 			}
 		}
 		System.out.println("\nRetour au menu principal");
+	}
+	public static void afficherDisponibilités(Employé employé) {
+		    String[] jours = {"Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"};
+		    boolean[] disponibilités = employé.getDisponibilités();
+
+		    System.out.println("Les Disponibilités de " + employé.getNom() + " :");
+		    for (int i = 0; i < 7; i++) {
+		        System.out.println (jours[i] + " : ");
+		        if(disponibilités[i]) {
+		        	System.out.println("Disponible");
+		        }else {
+		        	System.out.println("Non Disponible");
+		        }
+		    }   
 	}
 
 }
