@@ -6,16 +6,15 @@ public class Chalet {
 	private String adresse;
 	private int nbchambres;
 	private boolean loué;
-	private Employé employéEntretien;
+	private Boolean employéEntretien;
 	
-	public Chalet(String nom, String ville, int nbchambres, boolean loué, Employé employéEntretien,String adresse) {
+	public Chalet(String nom, String ville, int nbchambres, boolean loué, Boolean employéEntretien,String adresse) {
 		this.nom = nom;
 		this.adresse=adresse;
 		this.ville = ville;
 		this.nbchambres = nbchambres;
 		this.loué = false;
-		this.employéEntretien = null;
-	}
+		this.employéEntretien = false;	}
 
 
 	public String getNom() {
@@ -58,11 +57,11 @@ public class Chalet {
 		this.loué = loué;
 	}
 
-	public Employé getEmployéEntretien() {
+	public Boolean getEmployéEntretien() {
 		return employéEntretien;
 	}
 
-	public void setEmployéEntretien(Employé employéEntretien) {
+	public void setEmployéEntretien(Boolean employéEntretien) {
 		this.employéEntretien = employéEntretien;
 	}
 	public String toString() {

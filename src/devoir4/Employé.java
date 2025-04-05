@@ -19,7 +19,7 @@ public class Employé {
 		this.id = ++auto;
 		this.ville = ville;
 		this.disponibilités = disponibilités;
-		this.chaletEntretenus = new Chalet[5];
+		this.chaletEntretenus = chaletEntretenu;
 	}
 
 	public String getNom() {
