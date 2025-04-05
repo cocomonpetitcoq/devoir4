@@ -184,5 +184,23 @@ public class GestionnaireChaletsEtEmployés {
 		}
 		System.out.println("\nRetour au menu principal");
 	}
+	public static void ModifierDisponibilités(Scanner scan,Employé employé) {
+		String[] jours = {"Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"};
+
+	    System.out.println("Sélectionnez un jour pour modifier la disponibilité :");
+	    for (int i = 0; i < 7; i++) {
+	        System.out.println((i + 1) + ". " + jours[i]);
+	    }
+	    System.out.println("Selectionne le jour de mise a jour ");
+	    int choix=scan.nextInt();
+	     choix = traiterChoix( 1, 7);
+	    System.out.println("1. Disponible\n2. Non disponible");
+	    int dispo=scan.nextInt();
+	     dispo = traiterChoix( 1, 2);
+	    
+	    employé.setDisponibilités(choix - 1, dispo == 1);
+	    System.out.println("Disponibilité mise à jour !");
+
+	}
 
 }
