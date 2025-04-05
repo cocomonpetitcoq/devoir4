@@ -6,15 +6,16 @@ public class GestionnaireChaletsEtEmployés {
 	private static final String MDPPROPRIO = "chaletsTR25";
 	private static int option;
 	private static Scanner scan = new Scanner(System.in);
+	private static CentreDeLocation entreprise = new CentreDeLocation(new Chalet[], new Employé[], MDPPROPRIO);
 
 	public static void main(String[] args) {
-		CentreDeLocation entreprise = new CentreDeLocation(new Chalet[], new Employé[], MDPPROPRIO);
+
 		boolean arrêtMenuPrincipal = false;
 
 		while (!arrêtMenuPrincipal) {
 			afficherMenuPrincipal();
 			option = scan.nextInt();
-			
+
 			switch (option) {
 			case 0: {
 				arrêtMenuPrincipal = true;
@@ -42,7 +43,7 @@ public class GestionnaireChaletsEtEmployés {
 		System.out.println("Appuyez sur 0 pour quitter.\n");
 		System.out.println("Veuillez choisir une option.");
 	}
-	
+
 	private static void afficherMenuEmployé() {
 		System.out.println("\n==========MENU EMPLOYÉ==========\n");
 		System.out.println("Option 1 : Afficher vos disponibilités");
@@ -52,7 +53,7 @@ public class GestionnaireChaletsEtEmployés {
 		System.out.println("Appuyez sur 0 pour retourner au menu principal.\n");
 		System.out.println("Veuillez choisir une option.");
 	}
-	
+
 	private static void afficherMenuPropriétaire() {
 		System.out.println("\n==========MENU PROPRIÉTAIRE==========\n");
 		System.out.println("Option 1 : Consulter la liste de vos employés et leurs caractéristiques");
@@ -74,14 +75,39 @@ public class GestionnaireChaletsEtEmployés {
 		System.out.println("Veuillez choisir une option.");
 	}
 	
+	private static Employé authentifierEmployé() {
+		int id;
+		Employé employé;
+		boolean valide = false;
+		
+		System.out.println("\nVeuillez fournir votre id d'employé pour vous authentifier.");
+		
+		while(!valide) {
+			try {
+				id = Integer.parseInt(scan.nextLine().trim());
+				employé = entreprise.getEmployéParId(id);
+				if (employé != null) {
+					valide = true;
+				}
+				else {
+					System.out.println("Aucun employé associé à cet id. Réessayez.");
+				}
+			}
+			catch (Exception e) {
+				System.out.println("Vous avez entré un id invalide. Recommencez.");
+			}
+		}
+		return employé;
+	}
+
 	private static void menuEmployé() {
 		boolean arrêtMenuEmployé = false;
 		Employé employéConnecté;
-		
+
 		while (!arrêtMenuEmployé) {
 			afficherMenuEmployé();
 			option = scan.nextInt();
-			
+
 			switch (option) {
 			case 0: {
 				arrêtMenuEmployé = true;
@@ -103,14 +129,14 @@ public class GestionnaireChaletsEtEmployés {
 		}
 		System.out.println("\nRetour au menu principal");
 	}
-	
+
 	private static void menuPropriétaire() {
 		boolean arrêtMenuPropriétaire = false;
-		
+
 		while (!arrêtMenuPropriétaire) {
 			afficherMenuPropriétaire();
 			option = scan.nextInt();
-			
+
 			switch (option) {
 			case 0: {
 				arrêtMenuPropriétaire = true;
